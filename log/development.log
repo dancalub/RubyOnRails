@@ -8770,3 +8770,43 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 49ms (Views: 46.4ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/posts/29" for 127.0.0.1 at 2018-07-06 18:22:18 +0800
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/zensap/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 29]]
+  ↳ app/views/comments/_comment.html.erb:3
+  Rendered comments/_comment.html.erb (11.5ms)
+  Rendered comments/_form.html.erb (19.2ms)
+  Rendered posts/show.html.erb within layouts/application (34.5ms)
+Completed 200 OK in 368ms (Views: 339.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/posts/29" for 127.0.0.1 at 2018-07-06 18:25:19 +0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 29]]
+  ↳ app/views/comments/_comment.html.erb:3
+  Rendered comments/_comment.html.erb (2.2ms)
+  Rendered comments/_form.html.erb (2.9ms)
+  Rendered posts/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 41ms (Views: 36.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/29/edit" for 127.0.0.1 at 2018-07-06 20:08:03 +0800
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:29
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 400ms (Views: 381.2ms | ActiveRecord: 0.7ms)
+
+
